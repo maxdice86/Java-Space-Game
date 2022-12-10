@@ -10,75 +10,73 @@ import javax.swing.Timer;
 
 public class Fader implements ActionListener {
 
-private Timer timer;
-private float alpha;
-private int fadeType;
+	private Timer timer;
+	private float alpha;
+	private int fadeType;
 
-private int delay = 50;
-private int intial_delay;
+	private int delay = 50;
+	private int intial_delay;
 
-public Fader(int type) 
-{
-	fadeType = type;
-	
-	this.alpha = type;
-	
-	if (type == 1) this.intial_delay = 3000;
-	
-	else this.intial_delay = 500;
-	
-    initTimer();
-}
+	public Fader(int type) {
+		fadeType = type;
 
-private void initTimer() 
-{
+		this.alpha = type;
 
-    timer = new Timer(delay, this);
-    timer.setInitialDelay(intial_delay);
-    timer.start();
-}
+		if (type == 1)
+			this.intial_delay = 3000;
 
-public void render(Graphics2D g)
+		else
+			this.intial_delay = 500;
 
-{
-            AlphaComposite acomp = AlphaComposite.getInstance(
-            AlphaComposite.SRC_OVER, alpha);
-    		g.setComposite(acomp);
-    		g.setColor(Color.BLACK);
-    		g.fillRect(0, 0, 1280, 720);
-    		g.dispose();
-}
+		initTimer();
+	}
 
-private void fadeIn() 
-{
-    
-     alpha += -0.01f;
+	private void initTimer() {
 
-     if (alpha <= 0) {
+		timer = new Timer(delay, this);
+		timer.setInitialDelay(intial_delay);
+		timer.start();
+	}
 
-        alpha = 0f;
-        timer.stop();
-    }
-}
+	public void render(Graphics2D g)
 
-private void fadeOut() 
-{
-    
-     alpha += 0.01f;
+	{
+		AlphaComposite acomp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
+		g.setComposite(acomp);
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, 1280, 720);
+		g.dispose();
+	}
 
-     if (alpha >= 1) {
+	private void fadeIn() {
 
-        alpha = 1f;
-        timer.stop();
-    }
-}
+		alpha += -0.01f;
 
-@Override
-public void actionPerformed(ActionEvent e)
-{
+		if (alpha <= 0) {
 
-	if (fadeType == 1) fadeIn();
-	if (fadeType == 0) fadeOut();
-}
+			alpha = 0f;
+			timer.stop();
+		}
+	}
+
+	private void fadeOut() {
+
+		alpha += 0.01f;
+
+		if (alpha >= 1) {
+
+			alpha = 1f;
+			timer.stop();
+		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		if (fadeType == 1)
+			fadeIn();
+		if (fadeType == 0)
+			fadeOut();
+	}
 
 }

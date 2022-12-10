@@ -1,4 +1,5 @@
 package com.engine;
+
 import java.awt.Graphics2D;
 
 // TODO: Auto-generated Javadoc
@@ -8,18 +9,18 @@ import java.awt.Graphics2D;
 public abstract class GameState {
 
 	/** The lv manger. */
-	//protected LevelManger lv_manger;
-		
+	// protected LevelManger lv_manger;
+
 	/**
 	 * Update.
 	 */
 	public abstract void update();
-	
+
 	/**
 	 * Inits the.
 	 */
 	public abstract void init();
-	
+
 	/**
 	 * Render.
 	 *

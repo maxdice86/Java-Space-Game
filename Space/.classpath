@@ -2,6 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Res"/>
+	<classpathentry kind="src" path="libs"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_333"/>
+	<classpathentry kind="lib" path="C:/Users/Maurice B/git/Java-SpaceShooter-Game/Space/libs/jorbis-0.0.17.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maurice B/git/Java-SpaceShooter-Game/Space/libs/tritonus-share-0.3.7.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maurice B/git/Java-SpaceShooter-Game/Space/libs/vorbisspi-1.0.3.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
