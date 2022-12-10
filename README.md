@@ -6,7 +6,7 @@ Threads, rendering, updating, OOP paradigm basics, vectors, input Listeners, etc
 
 ![shooterMain](https://user-images.githubusercontent.com/17013385/206835682-3ee28f12-8bea-4599-b988-b85e30ff7934.jpg)
 
-You can dowload the included **.jar** file to play demo, or build folder in your prefered java IDE. 
+You can dowload the included **JavaSpaceShooter.jar** file to play demo, or build folder in your prefered java IDE. 
 
 **Controls:**
 
