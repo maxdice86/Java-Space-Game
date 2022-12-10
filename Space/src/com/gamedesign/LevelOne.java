@@ -32,6 +32,7 @@ public class LevelOne extends GameState {
 		Engine.obj_manager.startTimers();
 		// fadeIn = new Fader(1);
 		Engine.gui.setUP();
+		Engine.gui.setActive(true);
 
 		Engine.audiomg.sfx.get("bgm1").setVolume(0.5f);
 		Engine.audiomg.sfx.get("bgm1").setLoop();
@@ -44,11 +45,11 @@ public class LevelOne extends GameState {
 		bg5 = new Paralax("/Background/2.png", 1980, 256, 3056, 512, 512);
 		bg6 = new Paralax("/Background/3.png", 2560, -300, 4056, 512, 512);
 
-		Engine.gui.playerLives = 3;
+		//Engine.gui.playerLives = 3;
 
 		playerone = new Player(-640, 0, 512, 64, 64, 0, ID.Player);
 
-		Engine.gui.score = 0;
+		//Engine.gui.score = 0;
 
 		Engine.obj_manager.allobjects.add(playerone);
 

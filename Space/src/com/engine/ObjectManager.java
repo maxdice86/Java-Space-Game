@@ -44,8 +44,7 @@ public class ObjectManager extends Thread implements ActionListener {
 		enemycount = 0;
 		powerups = 0;
 		active = false;
-		bossone = new Bosses(1280, Camera3D.origin_y, 5048, 512, 512, 0, ID.Boss);
-
+	
 	}
 
 	public void setActive(boolean a) {
@@ -54,6 +53,9 @@ public class ObjectManager extends Thread implements ActionListener {
 
 	public void startTimers() {
 
+        System.out.println("Timers started");
+		
+		System.out.println(bossone);
 		generator = new Random();
 
 		BossSpawn = new Timer(60000, this);
@@ -70,6 +72,8 @@ public class ObjectManager extends Thread implements ActionListener {
 	}
 
 	public void stopTimers() {
+		System.out.println("Timers stopped");
+		System.out.println(bossone);
 		BossSpawn.stop();
 		Power.stop();
 		EnemnySpawn.stop();
@@ -78,6 +82,12 @@ public class ObjectManager extends Thread implements ActionListener {
 	public void spawnBoss() {
 
 		bossinGame = true;
+		
+		bossone = new Bosses(1280, Camera3D.origin_y, 5048, 512, 512, 0, ID.Boss);
+		
+		System.out.println("Spawing boss");
+		
+		System.out.println(bossone);
 
 		for (int i = 0; i < allobjects.size(); i++) {
 
@@ -142,7 +152,6 @@ public class ObjectManager extends Thread implements ActionListener {
 		if (pow >= 10 && powerups <= 3) {
 
 			PowerUps pw = new PowerUps(x, y, z, 64, 64, 0, ID.PowerUP);
-			System.out.println(powerups);
 			powerups += 1;
 
 			allobjects.add(pw);

@@ -3,6 +3,8 @@ package com.entities;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
+
 import com.engine.Camera3D;
 import com.engine.Engine;
 import com.engine.GameState;
@@ -30,25 +32,12 @@ public class HUD {
 	public GameState restart;
 
 	public HUD() {
-
-		active = false;
-		pause = false;
-		gameOver = false;
-		playIncoming = false;
-		playLose = false;
-
-		bossLife = 720;
-		playerLives = 3;
-
-		x = 0;
-		y = 0;
-		score = 0;
-
+		
+		setUP();
 		scoreDisplay = new Icons("/GUI/Score_0.png", 400, -250, 512, 178, 32);
 		livesDisplay = new Icons("/Player/player_0.png", -32, -250, 512, 32, 32);
 		overDisplay = new Icons("/GUI/lose.png", 0, 0, 512, 300, 64);
-
-		setBounds();
+		//setBounds();
 
 	}
 
@@ -117,7 +106,15 @@ public class HUD {
 
 	public void setUP() {
 		setBounds();
-		active = true;
+		pause = false;
+		gameOver = false;
+		playIncoming = false;
+		playLose = false;
+		bossLife = 720;
+		playerLives = 3;
+		x = 0;
+		y = 0;
+		score = 0;
 	}
 
 	public void pauseGame() {
@@ -183,18 +180,23 @@ public class HUD {
 				Engine.obj_manager.allobjects.remove(i);
 
 			}
+//			for(Sprite object : Engine.obj_manager.allobjects ) {
+//				
+//				Engine.obj_manager.allobjects.remove(object);	
+//			}
 
 			Engine.obj_manager.setActive(false);
 			Engine.obj_manager.stopTimers();
 			Engine.obj_manager.bossinGame = false;
 
-			if (InputManager.en_pressed) {
+			if (InputManager.en_pressed && Engine.obj_manager.allobjects.size()== 0) {
 
 				gameOver = false;
 				active = false;
 				Camera3D.setup(0, 0, 0);
 				Engine.level_manger.setState(0);
 				Engine.audiomg.sfx.get("lose").stop();
+				setUP();
 
 			}
 

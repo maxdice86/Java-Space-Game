@@ -49,9 +49,6 @@ public class Player extends Sprite implements ActionListener {
 		Engine.gui.playerPower = 50;
 
 		loadAnimation("moving", "/Player/player", 3, 20);
-
-		// loadAnimation("moving", "/Effects/p_Sprite", 8, 3);
-
 		loadAnimation("died", "/Player/hit2", 4, 5);
 		loadAnimation("damaged", "/Player/hit", 8, 10);
 		this.delay = 320;
@@ -59,10 +56,6 @@ public class Player extends Sprite implements ActionListener {
 		Engine.audiomg.sfx.get("shot").setVolume(1f);
 		Engine.audiomg.sfx.get("powerup").setVolume(2f);
 		Engine.audiomg.sfx.get("playerhit").setVolume(1f);
-
-		// auto = true;
-
-		// Engine.gui.removeBounds();
 
 	}
 
@@ -321,8 +314,6 @@ public class Player extends Sprite implements ActionListener {
 					damaged = true;
 					Engine.audiomg.sfx.get("playerhit").play();
 					setHp(-10);
-					System.out.println("getting hit");
-
 					break;
 
 				case PowerUP:

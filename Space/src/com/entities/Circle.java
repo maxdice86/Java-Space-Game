@@ -339,8 +339,6 @@ public class Circle {
 		c.px -= penx;
 		c.py -= peny;
 
-		System.out.println("pushing");
-
 	}
 
 	// ------------------------------------------------------------------------//
