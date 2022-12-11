@@ -2,7 +2,7 @@
 
 
 This project was created for my Java video game programming class. This is a work in progess and still has alot of bugs.  The project ,however, includes/showcase many java concepts and techniques such as:
-Threads, rendering, updating, OOP paradigm basics, vectors, input Listeners, etc.....
+Threads, 2D, 3D rendering, updating, OOP paradigm basics, vectors, input Listeners, etc.....
 
 ![shooterMain](https://user-images.githubusercontent.com/17013385/206835682-3ee28f12-8bea-4599-b988-b85e30ff7934.jpg)
 
